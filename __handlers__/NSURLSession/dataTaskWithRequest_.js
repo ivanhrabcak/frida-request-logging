@@ -27,12 +27,8 @@
     log(' --- headers:');
     log(request.allHTTPHeaderFields().toString());
     log(' --- body:');
-    // log(Object.getOwnPropertyNames(request.HTTPBody()).filter(function (p) {
-    //   return typeof request.HTTPBody()[p] === 'function';
-    // }).map(x => `${x}\n`));
     var httpbody_nsstring = ObjC.classes.NSString.alloc().initWithData_encoding_(request.HTTPBody(), 4);
     log(httpbody_nsstring)
-    if (request.HTTPBody()) log(decodeURIComponent(request.HTTPBody()));
     log(' --- method:');
     log(request.HTTPMethod().toString());
   },
